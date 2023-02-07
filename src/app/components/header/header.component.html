@@ -1,0 +1,18 @@
+<nav class="p-5 shadow bg-white md:flex md:items-center md:justify-between">
+    <div class="flex justify-between items-center">
+        <span class="text-2xl font-[Poppins] cursor-pointer">
+            Proyecto
+        </span>
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+            <i [ngClass]="icono ? 'bi bi-list' : 'bi bi-x-circle'" (click)="Menu()"></i>
+        </span>
+    </div>
+    <ul [ngClass]="{'hidden': icono, 'top-[80px] opacity-100 absolute': !icono}" class="md:flex md:items-center md:z-auto absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 z-10">
+        <li class="mx-4 my-6 md:my-0"><a [routerLink]="['/home']" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{exact: true}" class="text-xl hover:text-cyan-500 duration-500">Registrar Productos</a></li>
+        <li class="mx-4 my-6 md:my-0"><a [routerLink]="['/listar']" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{exact: true}" class="text-xl hover:text-cyan-500 duration-500">Listar Productos</a></li>
+
+        <button (click)="logout()" class="bg-cyan-400 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded ">
+            Logout
+        </button>
+    </ul>
+</nav>
